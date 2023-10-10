@@ -1,0 +1,24 @@
+Visit website at: http://localhost:8080/hello or http://<ipv6>:8080/hello
+
+Setting up environment:
+If this is the first time setting up the virtual machine, then you need to install Docker on the machine first.
+Make sure the machine is accessible locally on the network (bridged adapter)
+Copy the entire directory into the machine. The following commands can be run within the project main directory.
+
+
+Docker:
+docker run -p 8080:ABAB server:spring-docker . run the docker container on port ABAB
+docker ps - creates a list of running containers
+docker kill <CONTAINER ID> - stops the container
+
+Maven: (Requires Maven)
+./mvnw spring-boot:run - runs the app using Maven
+mvn spring-boot:build-image
+./mvnw clean package - cleans and rebuilds the jar executable file (rename target/spring-boot-docker.jar) 
+
+
+Setup: (Terminal commands)
+sudo apt install apt-transport - allows the use of repositories accessed via the HTTP Secure protocol (HTTPS)
+sudo usermod -aG docker $(whoami) - add the user to docker group (Use is docker server is non-responsive)
+hostname -I - check the IP of the machine, connect over TCP using inet v6 192.168.X.X
+

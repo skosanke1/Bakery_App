@@ -17,6 +17,6 @@ public class HelloController {
     // http://localhost:8080/helloYou
     @GetMapping("/helloYou")
     public String helloYou() {
-        return "Hello World!";
+        return "Hello, User!";
     }
 }
